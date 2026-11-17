@@ -1,0 +1,518 @@
+
+/* =====================================
+   ELITE FITNESS - MAIN STYLESHEET
+===================================== */
+
+:root {
+    --black: #080a08;
+    --dark: #101410;
+    --green: #b7ff00;
+    --white: #ffffff;
+    --grey: #a5aaa3;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--black);
+    color: var(--white);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font: inherit;
+}
+
+.section {
+    padding: 110px 8%;
+}
+
+.eyebrow {
+    color: var(--green);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 18px;
+}
+
+h1, h2, h3, .logo {
+    font-family: 'Barlow Condensed', sans-serif;
+}
+
+
+/* NAVIGATION */
+
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.navbar {
+    min-height: 85px;
+    padding: 0 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.logo {
+    font-size: 32px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: var(--green);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: #d5d8d2;
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--green);
+}
+
+.nav-button {
+    padding: 12px 23px;
+    background: var(--green);
+    color: var(--black);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.nav-button:hover {
+    background: white;
+    transform: translateY(-3px);
+}
+
+.menu-toggle {
+    display: none;
+    color: white;
+    background: transparent;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+
+/* HERO SECTION */
+
+.hero {
+    min-height: 760px;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 120px 8% 100px;
+    overflow: hidden;
+
+    background:
+        linear-gradient(90deg, rgba(0,0,0,0.94), rgba(0,0,0,0.45)),
+        url("https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=2000&q=85");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content {
+    max-width: 750px;
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: clamp(65px, 9vw, 125px);
+    font-weight: 900;
+    line-height: 0.95;
+    letter-spacing: -2px;
+    margin-bottom: 30px;
+}
+
+.hero h1 span {
+    display: block;
+    color: var(--green);
+}
+
+.hero-content > p:not(.eyebrow) {
+    max-width: 540px;
+    color: #c2c6bf;
+    font-size: 15px;
+    margin-bottom: 35px;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.primary-button,
+.secondary-button {
+    display: inline-block;
+    padding: 16px 25px;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.primary-button {
+    background: var(--green);
+    color: var(--black);
+}
+
+.primary-button:hover {
+    background: white;
+    transform: translateY(-4px);
+}
+
+.secondary-button {
+    border: 1px solid rgba(255,255,255,0.5);
+    color: white;
+}
+
+.secondary-button:hover {
+    border-color: var(--green);
+    color: var(--green);
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(circle at 75% 50%, transparent, rgba(0,0,0,0.3));
+}
+
+.hero-bottom {
+    position: absolute;
+    bottom: 35px;
+    left: 8%;
+    right: 8%;
+    display: flex;
+    justify-content: space-between;
+    color: #b7ff00;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+
+/* ABOUT SECTION */
+
+.about {
+    max-width: 1050px;
+}
+
+.about h2,
+.section h2 {
+    font-size: clamp(45px, 6vw, 75px);
+    line-height: 1;
+    margin-bottom: 25px;
+}
+
+.about h2 span,
+.section h2 span {
+    color: var(--green);
+}
+
+.about > p:last-child {
+    max-width: 750px;
+    color: var(--grey);
+    font-size: 16px;
+}
+
+
+/* PROGRAMS */
+
+.programs {
+    background: var(--dark);
+}
+
+.section-description {
+    color: var(--grey);
+    margin-bottom: 45px;
+}
+
+.program-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.program-card {
+    background: #171d16;
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 35px;
+    min-height: 260px;
+    transition: 0.3s;
+}
+
+.program-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--green);
+}
+
+.program-number {
+    color: var(--green);
+    font-size: 13px;
+    margin-bottom: 35px;
+}
+
+.program-card h3 {
+    font-size: 27px;
+    margin-bottom: 15px;
+}
+
+.program-card p {
+    color: var(--grey);
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+.program-card a {
+    color: var(--green);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+
+/* MEMBERSHIP */
+
+.membership {
+    text-align: center;
+}
+
+.membership-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    margin-top: 55px;
+    text-align: left;
+}
+
+.membership-card {
+    position: relative;
+    background: #141814;
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 40px 30px;
+    transition: 0.3s;
+}
+
+.membership-card:hover {
+    transform: translateY(-8px);
+}
+
+.membership-card.featured {
+    border: 1px solid var(--green);
+}
+
+.membership-card h3 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.price {
+    font-size: 38px;
+    font-weight: 800;
+    color: var(--green);
+    margin-bottom: 20px;
+}
+
+.price span {
+    font-size: 13px;
+    color: var(--grey);
+}
+
+.membership-card > p:not(.price):not(.popular) {
+    color: var(--grey);
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+.membership-card a {
+    display: block;
+    text-align: center;
+    padding: 13px;
+    background: var(--green);
+    color: var(--black);
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.popular {
+    color: var(--green);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.concept-note {
+    color: var(--grey);
+    font-size: 11px;
+    margin-top: 25px;
+}
+
+
+/* CONTACT */
+
+.contact {
+    text-align: center;
+    background: #121812;
+}
+
+.contact h2 {
+    margin-bottom: 25px;
+}
+
+.contact > p:not(.eyebrow) {
+    color: var(--grey);
+    margin-bottom: 35px;
+}
+
+
+/* FOOTER */
+
+.footer {
+    padding: 55px 8%;
+    text-align: center;
+    background: #050705;
+    border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.footer .logo {
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.footer p {
+    color: var(--grey);
+    font-size: 11px;
+    margin-top: 12px;
+    letter-spacing: 1px;
+}
+
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 900px) {
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    .program-container,
+    .membership-container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+
+@media (max-width: 650px) {
+
+    .navbar {
+        padding: 0 6%;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-button {
+        display: none;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 85px;
+        left: 0;
+        width: 100%;
+        padding: 25px;
+        background: #101410;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hero {
+        min-height: 680px;
+        padding: 130px 6% 100px;
+    }
+
+    .hero h1 {
+        font-size: 70px;
+    }
+
+    .hero-bottom {
+        left: 6%;
+        right: 6%;
+        font-size: 9px;
+        letter-spacing: 1px;
+    }
+
+    .section {
+        padding: 80px 6%;
+    }
+
+    .program-container,
+    .membership-container {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+/* =====================================
+   SCROLL REVEAL ANIMATIONS
+===================================== */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(35px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
+
